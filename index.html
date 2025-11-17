@@ -138,63 +138,59 @@ tw-icon:hover {
 
 @media (max-width: 600px) {
   
-  /* Makes the animated frame thinner on phones */
+  /* 1. Makes the animated frame thinner on phones */
   tw-story {
     padding: 8px; /* Was 20px on desktop */
   }
   
-  /* MOVES THE BACK BUTTON TO THE TOP-RIGHT */
+  /* 2. MOVES THE BACK BUTTON TO THE TOP-RIGHT */
   tw-sidebar {
     top: 10px;
-    left: auto;
-    right: 10px;
-    text-align: right;
+    left: auto;     /* This removes the left-side positioning */
+    right: 10px;    /* This adds right-side positioning */
+    text-align: right; /* This makes the icons line up on the right */
   }
 
-  /* Makes the back button a bit smaller on phones */
+  /* 3. Makes the back button a bit smaller on phones */
   tw-icon {
     font-size: 1.5em; /* Was 2em on desktop */
   }
   
-  /* Makes the callout box border thinner on phones */
+  /* 4. Makes the callout box border thinner on phones */
   .callout {
     border-left-width: 8px;
     padding: 8px;
   }
   
-  /* Reduces the side padding for *all* passages */
+  /* 5. Reduces the side padding for *all* passages */
   tw-story tw-passage {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 3%;
     padding-bottom: 3%;
   }
-
-  /* --- MOBILE FIX FOR THE TITLE PAGE --- */
   
-  /* This rule is now MORE specific to override the padding */
-  tw-story tw-passage#passage-start {
-    padding-top: 0;
-    padding-bottom: 0;
-    justify-content: center;
-  }
-
-  /* Shrinks the main title text */
-  tw-passage#passage-start h1 {
-    font-size: 1.8em;
+  /* --- NEW UNIVERSAL FONT FIXES FOR MOBILE --- */
+  
+  /* 6. Shrinks and WRAPS all H1s (like your title) */
+  tw-story tw-passage h1 {
+    font-size: 1.8em;          /* Makes H1s smaller */
     margin: 0.5em 0;
+    width: 100%;               /* Ensures it doesn't overflow */
+    overflow-wrap: break-word; /* Forces long words to wrap */
+    text-align: center;        /* Centers the wrapped text */
   }
 
-  /* Shrinks the subtitle text */
-  tw-passage#passage-start strong {
-    font-size: 1em;
-    margin: 0.5em 0;
-  }
-
-  /* Shrinks the "CLICK TO BEGIN" text */
-  tw-passage#passage-start h3 {
-    font-size: 1.1em;
+  /* 7. Shrinks all H3s (like your "CLICK TO BEGIN") */
+  tw-story tw-passage h3 {
+    font-size: 1.1em; 
     margin: 1em 0;
+    text-align: center; /* Added for consistency */
+  }
+
+  /* 8. Shrinks all strong tags (like your subtitle) */
+  tw-story tw-passage strong {
+    font-size: 1em; /* Makes bold text a bit smaller */
   }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="start" tags="" position="100,1600" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[=(b4r:&quot;solid&quot;)+(b4r-size:6)+(b4r-colour:#4E97E0)[
 #Are You Smarter Than a U.S. Policymaker?]
